@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Beautifier & Formatter - Online Tool</title>
+    <meta name="description" content="Beautify and format your JSON data online. Easily make JSON readable with our free online JSON beautifier. Improve data clarity and structure.">
+    <meta name="keywords" content="JSON beautifier, JSON formatter, online JSON, pretty JSON, JSON viewer, JSON editor, format JSON, JSON online, JSON clean, JSON readable">
+    <link rel="canonical" href="YOUR_CANONICAL_URL_HERE"> <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #ads-left, #ads-right {
+            width: 160px; /* Standard ad width */
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh; /* Full viewport height */
+            overflow-y: auto; /* Allow scrolling if ads are longer */
+        }
+
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        #output {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h1, h2 {
+          text-align: center;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GOOGLE_ANALYTICS_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'YOUR_GOOGLE_ANALYTICS_ID');
+    </script>
+</head>
+<body>
+
+    <div id="ads-left">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID" crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_AD_CLIENT_ID"
+             data-ad-slot="YOUR_LEFT_AD_SLOT_ID"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div id="content">
+        <h1>Online JSON Beautifier</h1>
+        <p>Paste your JSON data below and click the "Beautify" button to format it.</p>
+
+        <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea>
+        <button onclick="beautifyJSON()">Beautify</button>
+        <h2>Formatted JSON</h2>
+        <div id="output"></div>
+
+        <script>
+            function beautifyJSON() {
+                const input = document.getElementById('jsonInput').value;
+                try {
+                    const parsed = JSON.parse(input);
+                    const formatted = JSON.stringify(parsed, null, 2);
+                    document.getElementById('output').textContent = formatted;
+                } catch (error) {
+                    document.getElementById('output').textContent = "Invalid JSON: " + error.message;
+                }
+            }
+        </script>
+    </div>
+
+    <div id="ads-right">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID" crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_AD_CLIENT_ID"
+             data-ad-slot="YOUR_RIGHT_AD_SLOT_ID"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+</body>
+</html>
